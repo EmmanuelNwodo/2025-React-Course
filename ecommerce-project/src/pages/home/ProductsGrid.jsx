@@ -1,18 +1,8 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { formatMoney } from "../../utils/money";
 import CheckMarkIcon from "../../assets/images/icons/checkmark.png";
 import "./ProductsGrid.css";
 
-export function ProductsGrid() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios.get("/api/products").then((response) => {
-      setProducts(response.data);
-    });
-  }, []);
-
+export function ProductsGrid({ products }) {
   return (
     <>
       <div className="home-page">
