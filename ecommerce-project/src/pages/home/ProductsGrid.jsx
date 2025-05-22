@@ -1,11 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Header } from "../components/Header";
-import { formatMoney } from "../utils/money";
-import "./HomePage.css";
-import CheckMarkIcon from "../assets/images/icons/checkmark.png";
+import { useState, useEffect } from "react";
+import { formatMoney } from "../../utils/money";
+import CheckMarkIcon from "../../assets/images/icons/checkmark.png";
+import "./ProductsGrid.css";
 
-export function HomePage({ cart }) {
+export function ProductsGrid() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,10 +15,6 @@ export function HomePage({ cart }) {
 
   return (
     <>
-      <link rel="icon" type="image/svg+xml" href="images/home-favicon.png" />
-      <title>E-commerce Project</title>
-      <Header cart={cart} />
-
       <div className="home-page">
         <div className="products-grid">
           {products.map((product) => {
